@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
 import Favs from "./Routes/Favs";
 import Contact from "./Routes/Contact";
+import Detail from "./Routes/Detail";
 import Layout from "./Components/Layout";
 
 
@@ -16,6 +17,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/Favs" element={<Favs />} />
               <Route path="/Contact" element={<Contact />} />
+              <Route path="/Details/:id" element={<Detail />} />
             </Route>
               <Route path="*" element={<h1>404 not found</h1>} />
 
