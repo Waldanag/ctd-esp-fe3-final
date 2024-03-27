@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
 import Favs from "./Routes/Favs";
 import Contact from "./Routes/Contact";
@@ -10,7 +10,6 @@ import Layout from "./Components/Layout";
 function App() {
   return (
       <div className="App">
-        <BrowserRouter>
           <Routes>
 
             <Route element={<Layout />} >
@@ -22,7 +21,6 @@ function App() {
               <Route path="*" element={<h1>404 not found</h1>} />
 
           </Routes>
-        </BrowserRouter>
       </div>
   );
 }
