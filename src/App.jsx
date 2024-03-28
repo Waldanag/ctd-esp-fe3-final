@@ -11,7 +11,6 @@ function App() {
   return (
       <div className="App">
           <Routes>
-
             <Route element={<Layout />} >
               <Route path="/" element={<Home />} />
               <Route path="/Favs" element={<Favs />} />
@@ -19,10 +18,8 @@ function App() {
               <Route path="/Details/:id" element={<Detail />} />
             </Route>
               <Route path="*" element={<h1>404 not found</h1>} />
-
           </Routes>
       </div>
   );
 }
-
 export default App;

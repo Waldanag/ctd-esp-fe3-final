@@ -6,7 +6,6 @@ import Card from '../Components/Common/Card';
 const Home = () => {
   const [dentists, setDentists] = useState([]);
 
-
   useEffect(()=>{
     fetch("https://jsonplaceholder.typicode.com/users")
     .then((res)=>res.json())
