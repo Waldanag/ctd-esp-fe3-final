@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = () => {
+const ContactForm = () => {
   //Aqui deberan implementar el form completo con sus 
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -44,4 +44,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ContactForm;
