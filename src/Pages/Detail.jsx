@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
+import { getDentistById } from '../Api/api-dentist';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -10,8 +10,11 @@ const Detail = () => {
   const [dentistSelected, setDentistSelected] = useState({})
   
   useEffect(()=>{
-    axios(`https://jsonplaceholder.typicode.com/users/${id}`)
-    .then(res => setDentistSelected(res.data))
+    const getData = async () => {
+      let dentistData = await getDentistById(id);
+      setDentistSelected(dentistData);
+    }
+    getData();
   },[id])
 
 

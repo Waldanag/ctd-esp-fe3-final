@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../Context/global.context";
+//import { useGlobalContext } from "../../Context/global.context";
 
 
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
-  const [state, dispatch] = useGlobalContext();
+  //const [state, dispatch] = useGlobalContext();
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage

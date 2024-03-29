@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Card from '../Components/Common/Card';
+import { getAllDentists } from '../Api/api-dentist';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -7,9 +8,11 @@ const Home = () => {
   const [dentists, setDentists] = useState([]);
 
   useEffect(()=>{
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then((res)=>res.json())
-    .then((res)=>setDentists(res))
+    const getData = async () => {
+      let dentistsData = await getAllDentists();
+      setDentists(dentistsData)
+    }
+    getData()
   }, [])
 
 
