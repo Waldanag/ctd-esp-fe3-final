@@ -22,9 +22,13 @@ export const ContextProvider = ({ children }) => {
   useEffect(()=>{
     localStorage.setItem('theme', state.theme);
   }, [state.theme]);
+
+  const toggleTheme = () => {
+    dispatch({type: 'CHANGE_THEME'})
+  }
   
   
-  let data = { state, dispatch }
+  let data = { state, dispatch, toggleTheme }
   return (
     <ContextGlobal.Provider value={data}>
       {children}
