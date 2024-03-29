@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom";
-//import { useGlobalContext } from "../../Context/global.context";
+import { useState } from "react";
+import { useGlobalContext } from "../../Context/global.context";
 
 
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
-  //const [state, dispatch] = useGlobalContext();
+  const { state, dispatch } = useGlobalContext();
+  const [isClicked, setIsClicked] = useState(false);
+
+  const isFav = state.favs.some(fav => fav.id ===dentist.id);
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
+    setIsClicked(true);
+    if (isFav) {
+      dispatch({type: 'DEL_FAV_BY_ID', payload: dentist})
+    } else {
+      dispatch({type: 'ADD_FAVORITES', payload: dentist});
+
+    }
   }
 
   return (
@@ -25,12 +36,24 @@ const Card = ({ dentist }) => {
         <Link to={`/Details/${id}`} >
           <button>See Details</button>
         </Link>
-
       </div>
 
-
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <label onClick={addFav} className="favButton">
+          {isFav ? (
+            <img
+              src="/images/fav.svg"
+              className={`Fav ${isClicked ? 'animate' : ''}`}
+              alt="Fav"
+            />
+          ) : (
+            <img
+              src="/images/nofav.svg"
+              className={`noFav ${isClicked ? 'animate' : ''}`}
+              alt="noFav"
+            />
+          )}
+        </label>
     </div>
   );
 };

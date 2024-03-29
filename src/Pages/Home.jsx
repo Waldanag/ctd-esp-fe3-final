@@ -15,7 +15,6 @@ const Home = () => {
     getData()
   }, [])
 
-
   return (
     <main className="" >
       <h1>Home</h1>
