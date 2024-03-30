@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className={state.theme} >
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <img src="/DH.ico" alt="" />
-      <ul>
+      <ul className='navbar-links' >
         <Link to="/" >Home</Link>
         <Link to="/Favs" >Favs</Link>
         <Link to="/Contact" >Contact</Link>
