@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../Context/global.context'
 
-
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
 
-  const { toggleTheme } = useGlobalContext();
+  const { state, toggleTheme } = useGlobalContext();
 
   return (
-    <nav>
+    <nav className={state.theme} >
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <img src="/DH.ico" alt="" />
       <ul>
