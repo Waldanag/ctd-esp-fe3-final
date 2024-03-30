@@ -4,7 +4,7 @@ import Home from "./Pages/Home";
 import Favs from "./Pages/Favs";
 import Contact from "./Pages/Contact";
 import Detail from "./Pages/Detail";
-import Layout from "./Components/Layout";
+import Layout from "./Components/Layout/Layout";
 
 
 function App() {
